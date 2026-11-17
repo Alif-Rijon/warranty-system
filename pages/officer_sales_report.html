@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Report</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/officer.css">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/officer_data.js" defer></script>
+  <script src="../js/officer.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">Warranty System</div>
+    <div class="user">Sales Officer</div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="menu-title">Officer menu</div>
+      <a href="officer_dashboard.html">Dashboard</a>
+      <a href="officer_customers.html">Customers</a>
+      <a href="officer_register_warranty.html">Register Warranty</a>
+      <a href="officer_certificate.html">Warranty Certificate</a>
+      <a href="officer_sales_report.html" class="active">Sales Report</a>
+    </div>
+
+    <div class="main">
+
+      <div class="page-title">
+        <h1>Sales Report</h1>
+      </div>
+
+      <div class="box">
+        <h2>Warranties by Product</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Registered</th>
+                <th>Active</th>
+                <th>Expiring Soon</th>
+                <th>Expired</th>
+              </tr>
+            </thead>
+            <tbody id="product_body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Registrations in the Last 6 Months</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Laptop</th>
+                <th>Mobile</th>
+                <th>Television</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="month_body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Warranty System | Sales Officer panel</div>
+
+</body>
+</html>

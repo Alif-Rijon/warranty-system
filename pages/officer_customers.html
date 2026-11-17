@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/officer.css">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/officer_data.js" defer></script>
+  <script src="../js/officer.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">Warranty System</div>
+    <div class="user">Sales Officer</div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="menu-title">Officer menu</div>
+      <a href="officer_dashboard.html">Dashboard</a>
+      <a href="officer_customers.html" class="active">Customers</a>
+      <a href="officer_register_warranty.html">Register Warranty</a>
+      <a href="officer_certificate.html">Warranty Certificate</a>
+      <a href="officer_sales_report.html">Sales Report</a>
+    </div>
+
+    <div class="main">
+
+      <div class="page-title">
+        <h1>Customers</h1>
+      </div>
+
+      <div class="box">
+        <div class="officer-toolbar">
+          <input type="text" id="customer_search" placeholder="Search by name, phone, email or ID">
+          <button type="button" class="btn" id="customer_btn">Search</button>
+        </div>
+
+        <div class="table-wrap">
+          <table id="customer_table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Warranties</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>C-001</td>
+                <td>Humaira Hossain</td>
+                <td>01711-223344</td>
+                <td>humaira@example.com</td>
+                <td>Mirpur, Dhaka</td>
+                <td>1</td>
+                <td><a href="officer_register_warranty.html" class="btn btn-small">Register Warranty</a></td>
+              </tr>
+              <tr>
+                <td>C-002</td>
+                <td>Hamim Hossain</td>
+                <td>01819-556677</td>
+                <td>hamim@example.com</td>
+                <td>Uttara, Dhaka</td>
+                <td>2</td>
+                <td><a href="officer_register_warranty.html" class="btn btn-small">Register Warranty</a></td>
+              </tr>
+              <tr>
+                <td>C-003</td>
+                <td>Rifat Hosen</td>
+                <td>01911-889900</td>
+                <td>rifat@example.com</td>
+                <td>Agrabad, Chattogram</td>
+                <td>2</td>
+                <td><a href="officer_register_warranty.html" class="btn btn-small">Register Warranty</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="officer-link">Customers create their own account. Use "Register Warranty" to link a purchase to a customer.</p>
+      </div>
+
+      <div id="customer_result"></div>
+
+    </div>
+  </div>
+
+  <div class="footer">Warranty System | Sales Officer panel</div>
+
+</body>
+</html>

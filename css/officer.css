@@ -1,0 +1,71 @@
+.officer-stat {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--blue-light);
+  border-radius: 8px;
+}
+.officer-stat strong { display: block; font-size: 28px; color: var(--blue); }
+.officer-stat span { font-size: 14px; color: var(--muted); }
+.officer-stat-green  { border-left-color: #2e8b57; }
+.officer-stat-yellow { border-left-color: #d99a00; }
+.officer-stat-red    { border-left-color: #c0392b; }
+
+.officer-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.officer-toolbar input,
+.officer-toolbar select {
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 14px;
+}
+.officer-toolbar input { flex: 1; min-width: 200px; }
+
+.officer-link { margin: 14px 0 0; font-size: 14px; }
+
+
+.officer-form { max-width: 560px; }
+.officer-preview {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  background: #eef3fb;
+  border: 1px dashed var(--blue-light);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+.officer-detail {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 8px 12px;
+  margin: 0;
+}
+.officer-detail dt { color: var(--muted); }
+.officer-detail dd { margin: 0; font-weight: bold; }
+
+.officer-stat[data-list] { cursor: pointer; }
+.officer-stat[data-list]:hover { background: #f6f9ff; }
+.officer-stat-selected { outline: 2px solid var(--blue-light); }
+
+.officer-scroll { max-height: 420px; overflow: auto; }
+.officer-gap { margin-top: 14px; }
+.officer-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.officer-note { margin-bottom: 14px; padding: 10px 14px; background: #e6f4ec; border: 1px solid #2e8b57; border-radius: 6px; font-size: 14px; }
+.officer-msg { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+#customer_result .box { margin-top: 20px; }
+[hidden] { display: none !important; }
+
+.officer-certificate { max-width: 560px; border: 2px solid var(--blue-light); }
+.officer-certificate h2 { text-align: center; }
+
+@media print {
+  .header, .sidebar, .footer, .page-title, .no-print { display: none !important; }
+  body { background: #fff; }
+}

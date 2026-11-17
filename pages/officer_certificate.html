@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warranty Certificate</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/officer.css">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/officer_data.js" defer></script>
+  <script src="../js/officer.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">Warranty System</div>
+    <div class="user">Sales Officer</div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="menu-title">Officer menu</div>
+      <a href="officer_dashboard.html">Dashboard</a>
+      <a href="officer_customers.html">Customers</a>
+      <a href="officer_register_warranty.html">Register Warranty</a>
+      <a href="officer_certificate.html" class="active">Warranty Certificate</a>
+      <a href="officer_sales_report.html">Sales Report</a>
+    </div>
+
+    <div class="main">
+
+      <div class="page-title">
+        <h1>Warranty Certificate</h1>
+      </div>
+
+      <div class="box">
+        <div class="officer-toolbar">
+          <input type="text" id="cert_input" placeholder="Enter serial number (e.g. LAP001)">
+          <button type="button" class="btn" id="cert_btn">Search</button>
+        </div>
+        <p class="officer-msg" id="cert_msg"></p>
+      </div>
+
+      <div class="box officer-certificate" id="certificate" hidden>
+        <h2>Warranty Certificate</h2>
+        <dl class="officer-detail">
+          <dt>Serial Number</dt>
+          <dd id="c_serial"></dd>
+          <dt>Product</dt>
+          <dd id="c_product"></dd>
+          <dt>Invoice No.</dt>
+          <dd id="c_invoice"></dd>
+          <dt>Customer</dt>
+          <dd id="c_customer"></dd>
+          <dt>Phone</dt>
+          <dd id="c_phone"></dd>
+          <dt>Purchase Date</dt>
+          <dd id="c_purchase"></dd>
+          <dt>Warranty Period</dt>
+          <dd id="c_period"></dd>
+          <dt>Expiry Date</dt>
+          <dd id="c_expiry"></dd>
+          <dt>Status</dt>
+          <dd id="c_status"></dd>
+        </dl>
+        <p class="officer-link no-print"><button type="button" class="btn" id="print_btn">Print Certificate</button></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Warranty System | Sales Officer panel</div>
+
+</body>
+</html>

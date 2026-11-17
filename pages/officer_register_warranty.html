@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Warranty</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/officer.css">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/officer_data.js" defer></script>
+  <script src="../js/officer.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">Warranty System</div>
+    <div class="user">Sales Officer</div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="menu-title">Officer menu</div>
+      <a href="officer_dashboard.html">Dashboard</a>
+      <a href="officer_customers.html">Customers</a>
+      <a href="officer_register_warranty.html" class="active">Register Warranty</a>
+      <a href="officer_certificate.html">Warranty Certificate</a>
+      <a href="officer_sales_report.html">Sales Report</a>
+    </div>
+
+    <div class="main">
+
+      <div class="page-title">
+        <h1>Register Warranty</h1>
+      </div>
+
+      <div class="box officer-form">
+
+        <form id="warranty_form">
+
+          <div class="form-row">
+            <label for="customer">Customer</label>
+            <select id="customer" name="customer" required>
+              <option value="">-- Select customer --</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+              <option value="">-- Select product --</option>
+              <option>Laptop</option>
+              <option>Mobile</option>
+              <option>Television</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="serial_no">Serial Number</label>
+            <input type="text" id="serial_no" name="serial_no" placeholder="e.g. LAP006" required>
+          </div>
+
+          <div class="form-row">
+            <label for="invoice_no">Invoice No.</label>
+            <input type="text" id="invoice_no" name="invoice_no" placeholder="e.g. INV-2026-0501" required>
+          </div>
+
+          <div class="form-row">
+            <label for="purchase_date">Purchase Date</label>
+            <input type="date" id="purchase_date" name="purchase_date" required>
+          </div>
+
+          <div class="form-row">
+            <label for="months">Warranty Months</label>
+            <input type="number" id="months" name="months" min="1" placeholder="Filled from the product" required>
+            <p class="form-note">Filled from the product. You can change it.</p>
+          </div>
+
+          <div class="form-row">
+            <label for="expiry_date">Expiry Date</label>
+            <input type="date" id="expiry_date" name="expiry_date" readonly>
+          </div>
+
+          <div class="officer-preview" id="preview">Expiry date and status will appear here.</div>
+
+          <button type="submit" class="btn">Save Warranty</button>
+          <a href="officer_dashboard.html" class="btn btn-gray">Cancel</a>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Warranty System | Sales Officer panel</div>
+
+</body>
+</html>

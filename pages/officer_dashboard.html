@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officer Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/officer.css">
+  <script src="../js/common.js" defer></script>
+  <script src="../js/officer_data.js" defer></script>
+  <script src="../js/officer.js" defer></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">Warranty System</div>
+    <div class="user">Sales Officer</div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="sidebar">
+      <div class="menu-title">Officer menu</div>
+      <a href="officer_dashboard.html" class="active">Dashboard</a>
+      <a href="officer_customers.html">Customers</a>
+      <a href="officer_register_warranty.html">Register Warranty</a>
+      <a href="officer_certificate.html">Warranty Certificate</a>
+      <a href="officer_sales_report.html">Sales Report</a>
+    </div>
+
+    <div class="main">
+
+      <div class="page-title">
+        <h1>Welcome, Officer!</h1>
+      </div>
+
+      <p class="officer-note" id="saved_note" hidden>Warranty saved. It is now in Recent Warranty Registrations.</p>
+
+      <h2>Dashboard Overview</h2>
+      <div class="grid-4">
+        <div class="officer-stat" data-list="all">
+          <strong id="count_all">120</strong>
+          <span>Total Customers</span>
+        </div>
+        <div class="officer-stat officer-stat-green" data-list="active">
+          <strong id="count_active">85</strong>
+          <span>Active Warranty</span>
+        </div>
+        <div class="officer-stat officer-stat-yellow" data-list="expiring">
+          <strong id="count_expiring">15</strong>
+          <span>Expiring Soon</span>
+        </div>
+        <div class="officer-stat officer-stat-red" data-list="expired">
+          <strong id="count_expired">20</strong>
+          <span>Expired Warranty</span>
+        </div>
+      </div>
+
+      <div class="box" id="list_box" hidden>
+        <div class="officer-head">
+          <h2 id="list_title">Details</h2>
+          <button type="button" class="btn btn-gray btn-small" id="list_close">Close</button>
+        </div>
+        <div class="table-wrap officer-scroll">
+          <table>
+            <thead id="list_head"></thead>
+            <tbody id="list_body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Recent Warranty Registrations</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Serial Number</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="recent_body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">Warranty System | Sales Officer panel</div>
+
+</body>
+</html>
