@@ -1,0 +1,83 @@
+/* login.css - Login page only (pages/login.html)
+   Owner: Member 1. Used by every role, because all 4 roles sign in here.
+   Loaded AFTER style.css and layout.css. */
+ 
+/* Whole page: two halves side by side */
+.login-wrap { display: flex; flex: 1; min-height: 100vh; }
+ 
+/* ---------- Left half: blue panel ---------- */
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 20px;
+  padding: 48px;
+  background: linear-gradient(135deg, #0f1f3d, var(--blue) 45%, var(--blue-light));
+  color: #fff;
+}
+.login-brand { font-size: 26px; font-weight: bold; }
+.login-accent { color: #5bc0f8; }   /* the word "Desk" */
+.login-left h2 { margin-bottom: 14px; font-size: 34px; line-height: 1.25; color: #fff; }
+.login-left p { max-width: 430px; line-height: 1.6; color: #d6e4ff; }
+.login-back { margin: 0; font-size: 14px; }
+.login-back a { color: #d6e4ff; }
+ 
+/* ---------- Right half: white area, form in the centre ---------- */
+.login-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 40px 24px;
+  background: #fff;
+}
+.login-box { width: 100%; max-width: 380px; }
+.login-box h1 { margin-bottom: 6px; font-size: 30px; color: var(--text); }
+.login-subtitle { margin: 4px 0 24px; color: var(--muted); }
+ 
+/* Red error text under a field + red border on the field */
+.login-error { display: block; min-height: 16px; margin-top: 4px; font-size: 13px; color: #c0392b; }
+.form-row .login-invalid { border-color: #c0392b; }
+ 
+/* Red message box: "Wrong email or password." */
+.login-msg {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: #fbeaea;
+  border: 1px solid #efb3ad;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #96281b;
+}
+ 
+/* "Remember me" on the left, "Forgot password?" on the right */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.login-btn { width: 100%; padding: 11px; font-size: 15px; }
+.login-links a, .login-options a { text-decoration: none; }
+.login-links { margin-top: 18px; text-align: center; font-size: 14px; line-height: 2; }
+ 
+/* Dashed demo box (midterm only) */
+.login-demo {
+  margin-top: 22px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.login-demo p { margin: 0 0 4px; }
+ 
+/* ---------- Mobile: panels on top of each other ---------- */
+@media (max-width: 800px) {
+  .login-wrap { flex-direction: column; }
+  .login-left { flex: none; padding: 28px 24px; }
+  .login-left h2 { font-size: 24px; }
+}
