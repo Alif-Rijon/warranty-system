@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WarrantyDesk - Warranty and Service Management System</title>
+  <!-- index.html is in the root folder, so the paths have NO "../" -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+ 
+  <header class="header">
+    <div class="brand">Warranty<span class="home-accent">Desk</span></div>
+    <nav class="home-nav">
+      <a href="pages/public_check.html" class="btn btn-small btn-gray">Check Warranty</a>
+      <a href="pages/login.html" class="btn btn-small">Sign in</a>
+    </nav>
+  </header>
+ 
+  <main class="home-main">
+ 
+    <section class="home-hero">
+      <h1>Warranty and service, in one place.</h1>
+      <p>Register products, track warranty coverage and follow every service claim from submission to delivery.</p>
+      <a href="pages/login.html" class="btn">Sign in</a>
+      <a href="pages/customer_register.html" class="btn btn-gray">Create customer account</a>
+    </section>
+ 
+    <h2>Choose your role to sign in</h2>
+    <div class="grid-4">
+      <div class="box home-role">
+        <h3>System Administrator</h3>
+        <p>Manage staff accounts, the product catalogue, claim assignment and reports.</p>
+        <a href="pages/login.html?role=admin" class="btn btn-small">Admin Login</a>
+      </div>
+      <div class="box home-role">
+        <h3>Sales &amp; Warranty Officer</h3>
+        <p>Register sales and warranties, search records and see expiry reports.</p>
+        <a href="pages/login.html?role=officer" class="btn btn-small">Officer Login</a>
+      </div>
+      <div class="box home-role">
+        <h3>Service Technician</h3>
+        <p>See assigned jobs, record diagnosis and repairs, and update claim status.</p>
+        <a href="pages/login.html?role=technician" class="btn btn-small">Technician Login</a>
+      </div>
+      <div class="box home-role">
+        <h3>Customer</h3>
+        <p>View your warranties, submit a claim and track its progress.</p>
+        <a href="pages/login.html?role=customer" class="btn btn-small">Customer Login</a>
+      </div>
+    </div>
+ 
+    <div class="box">
+      <h2>Check a warranty without logging in</h2>
+      <p class="home-small">Enter a product serial number to see its coverage status. No private customer data is shown.</p>
+      <a href="pages/public_check.html" class="btn">Check by Serial Number</a>
+    </div>
+ 
+  </main>
+ 
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System &middot; CSC 3215 Web Technologies
+  </footer>
+ 
+</body>
+</html>
