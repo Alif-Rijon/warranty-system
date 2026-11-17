@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalogue - WarrantyDesk</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">Warranty<span class="admin-brand-accent">Desk</span></div>
+    <div class="user admin-user">System Administrator <span class="admin-avatar">R</span></div>
+  </header>
+
+  <div class="wrapper">
+
+    <aside class="sidebar">
+      <div class="menu-title">Administrator</div>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_users.html">User &amp; Role Management</a>
+      <a href="admin_products.html"  class="active">Product Catalogue</a>
+      <a href="admin_claims_queue.html">Claims Queue</a>
+      <a href="admin_reports.html">Reports</a>
+      <div class="menu-title">Account</div>
+      <a href="profile.html">Profile</a>
+      <a href="change_password.html">Change Password</a>
+      <a href="login.html">Logout</a>
+    </aside>
+
+    <main class="main">
+
+      <div class="page-title">
+        <div>
+          <h1>Product Catalogue</h1>
+          <p class="admin-subtitle">Products and their default warranty policy (duration in months)</p>
+        </div>
+      </div>
+
+      <div id="productMsg" class="admin-msg" hidden></div>
+
+      <div class="box">
+        <h2 id="productFormTitle">Add product</h2>
+        <form id="productForm" novalidate>
+          <div class="admin-form-grid">
+            <div class="form-row">
+              <label for="productName">Product name</label>
+              <input type="text" id="productName" name="name" placeholder="e.g. Samsung 55&quot; QLED TV">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="productBrand">Brand</label>
+              <input type="text" id="productBrand" name="brand" placeholder="e.g. Samsung">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="productModel">Model</label>
+              <input type="text" id="productModel" name="model" placeholder="e.g. QN55Q60D">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="productCategory">Category</label>
+              <select id="productCategory" name="category">
+                <option value="">-- Select category --</option>
+                <option value="Television">Television</option>
+                <option value="Refrigerator">Refrigerator</option>
+                <option value="Washing Machine">Washing Machine</option>
+                <option value="Air Conditioner">Air Conditioner</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Mobile Phone">Mobile Phone</option>
+                <option value="Other">Other</option>
+              </select>
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="productPrice">Price (BDT)</label>
+              <input type="number" id="productPrice" name="price" min="1" step="0.01" placeholder="e.g. 89500">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="productMonths">Default warranty (months)</label>
+              <input type="number" id="productMonths" name="default_warranty_months" min="1" max="120" placeholder="e.g. 24">
+              <small class="admin-error"></small>
+            </div>
+          </div>
+          <div class="admin-form-buttons">
+            <button type="submit" id="productSubmit" class="btn">Add Product</button>
+            <button type="button" id="productCancel" class="btn btn-gray">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="box">
+        <h2>All products</h2>
+
+        <div class="admin-toolbar" data-table="productsTable">
+          <input type="text" class="admin-search" placeholder="Search by name, brand or model">
+          <select data-col="4">
+            <option value="">All categories</option>
+            <option value="Television">Television</option>
+            <option value="Refrigerator">Refrigerator</option>
+            <option value="Washing Machine">Washing Machine</option>
+            <option value="Air Conditioner">Air Conditioner</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile Phone">Mobile Phone</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table id="productsTable">
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>Brand</th><th>Model</th><th>Category</th>
+                <th>Price</th><th>Default Warranty</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>P-001</td><td>Samsung 55" QLED TV</td><td>Samsung</td><td>QN55Q60D</td><td>Television</td>
+                <td data-value="89500">৳ 89,500</td><td data-value="24">24 months</td>
+                <td class="admin-actions">
+                  <button type="button" class="btn btn-small" data-action="edit">Edit</button>
+                  <button type="button" class="btn btn-small admin-btn-danger" data-action="delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>P-005</td><td>HP Laptop 15</td><td>HP</td><td>15-FD0123TU</td><td>Laptop</td>
+                <td data-value="72500">৳ 72,500</td><td data-value="12">12 months</td>
+                <td class="admin-actions">
+                  <button type="button" class="btn btn-small" data-action="edit">Edit</button>
+                  <button type="button" class="btn btn-small admin-btn-danger" data-action="delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

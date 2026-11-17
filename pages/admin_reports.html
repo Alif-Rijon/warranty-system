@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - WarrantyDesk</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">Warranty<span class="admin-brand-accent">Desk</span></div>
+    <div class="user admin-user">System Administrator <span class="admin-avatar">R</span></div>
+  </header>
+
+  <div class="wrapper">
+
+    <aside class="sidebar">
+      <div class="menu-title">Administrator</div>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_users.html">User &amp; Role Management</a>
+      <a href="admin_products.html">Product Catalogue</a>
+      <a href="admin_claims_queue.html">Claims Queue</a>
+      <a href="admin_reports.html" class="active">Reports</a>
+      <div class="menu-title">Account</div>
+      <a href="profile.html">Profile</a>
+      <a href="change_password.html">Change Password</a>
+      <a href="login.html">Logout</a>
+    </aside>
+
+    <main class="main">
+
+      <div class="page-title">
+        <div>
+          <h1>System Reports</h1>
+          <p class="admin-subtitle">Warranty totals, expiry, claims by status, technician workload and product statistics</p>
+        </div>
+        <button type="button" id="printReport" class="btn admin-no-print">Print Report</button>
+      </div>
+
+      <div class="grid-4">
+        <div class="box">
+          <p class="admin-stat-label">Total warranties</p>
+          <p class="admin-stat-number">1,537</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Active</p>
+          <p class="admin-stat-number admin-text-green">1,184</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Expiring Soon (30 days)</p>
+          <p class="admin-stat-number admin-text-orange">57</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Expired</p>
+          <p class="admin-stat-number admin-text-red">296</p>
+        </div>
+      </div>
+
+      <!-- 1. Warranty expiry report -->
+      <div class="box">
+        <h2>Warranty expiry report</h2>
+        <p class="admin-small">Expiry date = purchase date + warranty months. Status: Active (&gt; 30 days left), Expiring Soon (0&ndash;30 days), Expired (date passed).</p>
+
+        <div class="admin-toolbar admin-no-print" data-table="expiryTable">
+          <input type="text" class="admin-search" placeholder="Search by serial, customer or product">
+          <div>
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter" data-col="7">
+              <option value="">All</option>
+              <option value="Active">Active</option>
+              <option value="Expiring Soon">Expiring Soon</option>
+              <option value="Expired">Expired</option>
+            </select>
+          </div>
+          <div>
+            <label for="expiryFrom">Expiry from</label>
+            <input type="date" id="expiryFrom" data-col="5" data-range="from">
+          </div>
+          <div>
+            <label for="expiryTo">Expiry to</label>
+            <input type="date" id="expiryTo" data-col="5" data-range="to">
+          </div>
+          <button type="button" class="btn btn-gray" data-reset>Reset</button>
+        </div>
+
+        <div class="table-wrap">
+          <table id="expiryTable">
+            <thead>
+              <tr>
+                <th>Serial No.</th><th>Customer</th><th>Product</th><th>Purchase Date</th>
+                <th>Warranty</th><th>Expiry Date</th><th>Days Left</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-purchase="2024-12-05" data-months="24">
+                <td>SN-2024-001302</td><td>Ayesha Siddika</td><td>Samsung 55" QLED TV</td>
+                <td>2024-12-05</td><td>24 months</td><td>-</td><td>-</td><td>-</td>
+              </tr>
+              <tr data-purchase="2025-06-10" data-months="12">
+                <td>SN-2025-001190</td><td>Imran Kabir</td><td>Xiaomi Redmi Note 13</td>
+                <td>2025-06-10</td><td>12 months</td><td>-</td><td>-</td><td>-</td>
+              </tr>
+              <tr data-purchase="2026-10-19" data-months="24">
+                <td>SN-2026-004821</td><td>Ayesha Siddika</td><td>Samsung 55" QLED TV</td>
+                <td>2026-10-19</td><td>24 months</td><td>-</td><td>-</td><td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-two-col">
+        <!-- 2. Claims by status -->
+        <div class="box">
+          <h2>Claims by status</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Status</th><th>Claims</th><th>Share</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="badge admin-badge-pending">Pending</span></td><td>12</td><td>6.9%</td></tr>
+                <tr><td><span class="badge admin-badge-service">In Service</span></td><td>20</td><td>11.6%</td></tr>
+                <tr><td><span class="badge admin-badge-repaired">Repaired</span></td><td>61</td><td>35.3%</td></tr>
+                <tr><td><span class="badge admin-badge-replaced">Replaced</span></td><td>27</td><td>15.6%</td></tr>
+                <tr><td><span class="badge admin-badge-rejected">Rejected</span></td><td>9</td><td>5.2%</td></tr>
+                <tr><td><span class="badge admin-badge-delivered">Delivered</span></td><td>44</td><td>25.4%</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>173</strong></td><td><strong>100%</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. Technician workload -->
+        <div class="box">
+          <h2>Technician workload</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Technician</th><th>Open (Assigned)</th><th>Done</th><th>Total</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Rahim Uddin</td><td>9</td><td>41</td><td>50</td></tr>
+                <tr><td>Nabila Khan</td><td>7</td><td>38</td><td>45</td></tr>
+                <tr><td>Sohel Ahmed</td><td>4</td><td>29</td><td>33</td></tr>
+                <tr><td>Farhan Mahmud</td><td>12</td><td>33</td><td>45</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>32</strong></td><td><strong>141</strong></td><td><strong>173</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Product-wise service statistics -->
+      <div class="box">
+        <h2>Product-wise service statistics</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th><th>Warranties</th><th>Claims</th><th>Repaired</th>
+                <th>Replaced</th><th>Rejected</th><th>Claim Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Samsung 55" QLED TV</td><td>412</td><td>46</td><td>16</td><td>7</td><td>2</td><td>11.2%</td></tr>
+              <tr><td>HP Laptop 15</td><td>189</td><td>19</td><td>7</td><td>3</td><td>1</td><td>10.1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

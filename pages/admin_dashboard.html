@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Dashboard - WarrantyDesk</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">Warranty<span class="admin-brand-accent">Desk</span></div>
+    <div class="user admin-user">System Administrator <span class="admin-avatar">R</span></div>
+  </header>
+
+  <div class="wrapper">
+
+    <aside class="sidebar">
+      <div class="menu-title">Administrator</div>
+      <a href="admin_dashboard.html" class="active">Dashboard</a>
+      <a href="admin_users.html">User &amp; Role Management</a>
+      <a href="admin_products.html">Product Catalogue</a>
+      <a href="admin_claims_queue.html">Claims Queue</a>
+      <a href="admin_reports.html">Reports</a>
+      <div class="menu-title">Account</div>
+      <a href="profile.html">Profile</a>
+      <a href="change_password.html">Change Password</a>
+      <a href="login.html">Logout</a>
+    </aside>
+
+    <main class="main">
+
+      <div class="page-title">
+        <div>
+          <h1>Administrator Dashboard</h1>
+          <p class="admin-subtitle">System-wide overview of users, warranties and claims</p>
+        </div>
+        <a href="admin_reports.html" class="btn">View Reports</a>
+      </div>
+
+      <!-- 4 summary cards -->
+      <div class="grid-4">
+        <div class="box">
+          <p class="admin-stat-label">Registered users</p>
+          <p class="admin-stat-number">248</p>
+          <p class="admin-stat-note">4 roles</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Active warranties</p>
+          <p class="admin-stat-number admin-text-green">1,184</p>
+          <p class="admin-stat-note">More than 30 days left</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Expiring in 30 days</p>
+          <p class="admin-stat-number admin-text-orange">57</p>
+          <p class="admin-stat-note">Need attention soon</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Open claims</p>
+          <p class="admin-stat-number admin-text-red">32</p>
+          <p class="admin-stat-note">Pending + In Service</p>
+        </div>
+      </div>
+
+      <div class="admin-two-col">
+
+        <!-- Claims by status (bar width is set by admin.js from data-value) -->
+        <div class="box">
+          <h2>Claims by status</h2>
+          <div class="admin-bar-row">
+            <p>Pending &middot; 12</p>
+            <div class="admin-bar"><div class="admin-bar-fill admin-fill-pending" data-value="12"></div></div>
+          </div>
+          <div class="admin-bar-row">
+            <p>In Service &middot; 20</p>
+            <div class="admin-bar"><div class="admin-bar-fill admin-fill-service" data-value="20"></div></div>
+          </div>
+          <div class="admin-bar-row">
+            <p>Repaired / Replaced &middot; 88</p>
+            <div class="admin-bar"><div class="admin-bar-fill admin-fill-done" data-value="88"></div></div>
+          </div>
+          <div class="admin-bar-row">
+            <p>Rejected &middot; 9</p>
+            <div class="admin-bar"><div class="admin-bar-fill admin-fill-rejected" data-value="9"></div></div>
+          </div>
+        </div>
+
+        <!-- Technician workload -->
+        <div class="box">
+          <h2>Technician workload</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Technician</th><th>Assigned</th><th>Done</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Rahim U.</td><td>9</td><td>41</td></tr>
+                <tr><td>Nabila K.</td><td>7</td><td>38</td></tr>
+                <tr><td>Sohel A.</td><td>4</td><td>29</td></tr>
+                <tr><td>Farhan M.</td><td>12</td><td>33</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Shortcuts -->
+      <div class="box admin-quick">
+        <h2>Quick actions</h2>
+        <a href="admin_users.html" class="btn">Create Staff Account</a>
+        <a href="admin_products.html" class="btn">Add Product</a>
+        <a href="admin_claims_queue.html" class="btn">Assign Claims</a>
+        <a href="admin_reports.html" class="btn btn-gray">Print Reports</a>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

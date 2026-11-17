@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claims Queue - WarrantyDesk</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">Warranty<span class="admin-brand-accent">Desk</span></div>
+    <div class="user admin-user">System Administrator <span class="admin-avatar">R</span></div>
+  </header>
+
+  <div class="wrapper">
+
+    <aside class="sidebar">
+      <div class="menu-title">Administrator</div>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_users.html">User &amp; Role Management</a>
+      <a href="admin_products.html">Product Catalogue</a>
+      <a href="admin_claims_queue.html"  class="active">Claims Queue</a>
+      <a href="admin_reports.html">Reports</a>
+      <div class="menu-title">Account</div>
+      <a href="profile.html">Profile</a>
+      <a href="change_password.html">Change Password</a>
+      <a href="login.html">Logout</a>
+    </aside>
+
+    <main class="main">
+
+            <div class="page-title">
+        <div>
+          <h1>Claims Queue</h1>
+          <p class="admin-subtitle">Review customer claims and assign each one to a technician</p>
+        </div>
+      </div>
+
+      <!-- Counts are calculated by admin.js from the table below -->
+      <div class="grid-4">
+        <div class="box">
+          <p class="admin-stat-label">Pending claims</p>
+          <p class="admin-stat-number admin-text-orange" id="countPending">0</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Not assigned yet</p>
+          <p class="admin-stat-number admin-text-red" id="countUnassigned">0</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">In service</p>
+          <p class="admin-stat-number" id="countService">0</p>
+        </div>
+        <div class="box">
+          <p class="admin-stat-label">Technicians</p>
+          <p class="admin-stat-number">4</p>
+        </div>
+      </div>
+
+      <div id="claimMsg" class="admin-msg" hidden></div>
+
+      <div class="box">
+        <h2>All claims</h2>
+
+        <div class="admin-toolbar" data-table="claimsTable">
+          <input type="text" class="admin-search" placeholder="Search by claim ID, customer, product or serial">
+          <select data-col="5">
+            <option value="">All status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Service">In Service</option>
+            <option value="Repaired">Repaired</option>
+            <option value="Replaced">Replaced</option>
+            <option value="Rejected">Rejected</option>
+            <option value="Delivered">Delivered</option>
+          </select>
+          <select data-col="6">
+            <option value="">All technicians</option>
+            <option value="Not assigned">Not assigned</option>
+            <option value="Rahim Uddin">Rahim Uddin</option>
+            <option value="Nabila Khan">Nabila Khan</option>
+            <option value="Sohel Ahmed">Sohel Ahmed</option>
+            <option value="Farhan Mahmud">Farhan Mahmud</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table id="claimsTable">
+            <thead>
+              <tr>
+                <th>Claim ID</th><th>Customer</th><th>Product / Serial</th><th>Claim Date</th>
+                <th>Problem</th><th>Status</th><th>Assigned To</th><th>Assign Technician</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CLM-1051</td>
+                <td>Ayesha Siddika</td>
+                <td>Samsung 55" QLED TV<br><span class="admin-small">SN-2026-004821</span></td>
+                <td>15 Nov 2026</td>
+                <td>No picture, but sound works.</td>
+                <td><span class="badge admin-badge-pending">Pending</span></td>
+                <td>Not assigned</td>
+                <td class="admin-actions">
+                  <select>
+                    <option value="">-- Technician --</option>
+                    <option value="Rahim Uddin">Rahim Uddin</option>
+                    <option value="Nabila Khan">Nabila Khan</option>
+                    <option value="Sohel Ahmed">Sohel Ahmed</option>
+                    <option value="Farhan Mahmud">Farhan Mahmud</option>
+                  </select>
+                  <button type="button" class="btn btn-small" data-action="assign">Assign</button>
+                </td>
+              </tr>
+              <tr>
+                <td>CLM-1048</td>
+                <td>Imran Kabir</td>
+                <td>HP Laptop 15<br><span class="admin-small">SN-2026-003390</span></td>
+                <td>10 Nov 2026</td>
+                <td>Battery not charging.</td>
+                <td><span class="badge admin-badge-service">In Service</span></td>
+                <td>Nabila Khan</td>
+                <td class="admin-actions"><span class="admin-small">Already in progress / closed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="form-note">Only Pending claims can be assigned. The technician then moves the claim to In Service.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

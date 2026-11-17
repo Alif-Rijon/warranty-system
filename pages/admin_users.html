@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User &amp; Role Management - WarrantyDesk</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">Warranty<span class="admin-brand-accent">Desk</span></div>
+    <div class="user admin-user">System Administrator <span class="admin-avatar">R</span></div>
+  </header>
+
+  <div class="wrapper">
+
+    <aside class="sidebar">
+      <div class="menu-title">Administrator</div>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="admin_users.html" class="active">User &amp; Role Management</a>
+      <a href="admin_products.html">Product Catalogue</a>
+      <a href="admin_claims_queue.html">Claims Queue</a>
+      <a href="admin_reports.html">Reports</a>
+      <div class="menu-title">Account</div>
+      <a href="profile.html">Profile</a>
+      <a href="change_password.html">Change Password</a>
+      <a href="login.html">Logout</a>
+    </aside>
+
+    <main class="main">
+
+            <div class="page-title">
+        <div>
+          <h1>User &amp; Role Management</h1>
+          <p class="admin-subtitle">Create, edit, deactivate and reset accounts for officers and technicians</p>
+        </div>
+      </div>
+
+      <div id="userMsg" class="admin-msg" hidden></div>
+
+      <!-- Create / edit form -->
+      <div class="box">
+        <h2 id="userFormTitle">Create staff account</h2>
+        <form id="userForm" novalidate>
+          <div class="admin-form-grid">
+            <div class="form-row">
+              <label for="userName">Full name</label>
+              <input type="text" id="userName" name="full_name" placeholder="e.g. Rijon Sikder">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="userEmail">Email</label>
+              <input type="email" id="userEmail" name="email" placeholder="name@warrantydesk.com">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="userPhone">Phone</label>
+              <input type="text" id="userPhone" name="phone" placeholder="01712345678">
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="userRole">Role</label>
+              <select id="userRole" name="role">
+                <option value="">-- Select role --</option>
+                <option value="Sales &amp; Warranty Officer">Sales &amp; Warranty Officer</option>
+                <option value="Service Technician">Service Technician</option>
+              </select>
+              <small class="admin-error"></small>
+            </div>
+            <div class="form-row">
+              <label for="userPassword">Temporary password</label>
+              <input type="password" id="userPassword" name="password" placeholder="At least 6 characters">
+              <small class="admin-error"></small>
+            </div>
+          </div>
+          <div class="admin-form-buttons">
+            <button type="submit" id="userSubmit" class="btn">Create Account</button>
+            <button type="button" id="userCancel" class="btn btn-gray">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Staff list -->
+      <div class="box">
+        <h2>Staff accounts</h2>
+
+        <div class="admin-toolbar" data-table="usersTable">
+          <input type="text" class="admin-search" placeholder="Search by name, email or phone">
+          <select data-col="4">
+            <option value="">All roles</option>
+            <option value="Sales &amp; Warranty Officer">Sales &amp; Warranty Officer</option>
+            <option value="Service Technician">Service Technician</option>
+          </select>
+          <select data-col="5">
+            <option value="">All status</option>
+            <option value="Active">Active</option>
+            <option value="Deactivated">Deactivated</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table id="usersTable">
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Status</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>U-003</td><td>Tanvir Hasan</td><td>tanvir@warrantydesk.com</td><td>01712345678</td>
+                <td>Sales &amp; Warranty Officer</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td class="admin-actions">
+                  <button type="button" class="btn btn-small" data-action="edit">Edit</button>
+                  <button type="button" class="btn btn-small btn-gray" data-action="reset">Reset Password</button>
+                  <button type="button" class="btn btn-small admin-btn-danger" data-action="toggle">Deactivate</button>
+                </td>
+              </tr>
+              <tr>
+                <td>U-005</td><td>Rahim Uddin</td><td>rahim@warrantydesk.com</td><td>01911556677</td>
+                <td>Service Technician</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td class="admin-actions">
+                  <button type="button" class="btn btn-small" data-action="edit">Edit</button>
+                  <button type="button" class="btn btn-small btn-gray" data-action="reset">Reset Password</button>
+                  <button type="button" class="btn btn-small admin-btn-danger" data-action="toggle">Deactivate</button>
+                </td>
+              </tr>
+              <tr>
+                <td>U-009</td><td>Jahid Islam</td><td>jahid@warrantydesk.com</td><td>01799887766</td>
+                <td>Sales &amp; Warranty Officer</td>
+                <td><span class="badge admin-badge-inactive">Deactivated</span></td>
+                <td class="admin-actions">
+                  <button type="button" class="btn btn-small" data-action="edit">Edit</button>
+                  <button type="button" class="btn btn-small btn-gray" data-action="reset">Reset Password</button>
+                  <button type="button" class="btn btn-small" data-action="toggle">Activate</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot; Warranty and Service Management System
+  </footer>
+
+</body>
+</html>
