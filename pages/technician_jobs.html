@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Assigned Jobs | WarrantyDesk</title>
+
+  <link rel="icon" href="../images/favicon.ico">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+
+  <link rel="stylesheet" href="../css/technician.css">
+
+  <script src="../js/technician.js" defer></script>
+</head>
+
+<body class="technician-page">
+
+  <header class="header">
+    <div class="brand">WarrantyDesk</div>
+    <div class="user">Service Technician</div>
+  </header>
+
+  <div class="wrapper">
+
+    <nav class="sidebar" aria-label="Technician navigation">
+
+      <div class="menu-title">Technician</div>
+
+      <a href="technician_dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="technician_jobs.html"
+         class="active"
+         aria-current="page">
+        Assigned Jobs
+      </a>
+
+      <a href="technician_service_log.html">
+        Claim Details
+      </a>
+
+      <a href="profile.html">
+        Profile
+      </a>
+
+      <a href="change_password.html">
+        Change Password
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+    <main class="main">
+
+      <div class="page-title">
+        <h1>Assigned Jobs</h1>
+
+        <a href="technician_dashboard.html" class="btn">
+          Back to Dashboard
+        </a>
+      </div>
+
+      <p class="technician-intro technician-muted">
+        View and manage service jobs assigned to your account.
+        Search for a claim, filter jobs by status, and open
+        claim details to update service progress.
+      </p>
+
+      <section class="box" aria-labelledby="jobs-heading">
+
+        <h2 id="jobs-heading">My Assigned Jobs</h2>
+
+        <div class="technician-filter">
+
+          <div class="form-row">
+
+            <label for="jobs-search">
+              Search Assigned Jobs
+            </label>
+
+            <input
+              type="search"
+              id="jobs-search"
+              name="search"
+              placeholder="Claim, product, serial or customer"
+              autocomplete="off"
+            >
+
+          </div>
+
+          <div class="form-row">
+
+            <label for="jobs-status">
+              Filter by Status
+            </label>
+
+            <select id="jobs-status" name="status">
+
+              <option value="">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="In Service">In Service</option>
+              <option value="Repaired">Repaired</option>
+              <option value="Replaced">Replaced</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Delivered">Delivered</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="table-wrap">
+
+          <table aria-describedby="jobs-count">
+
+            <thead>
+              <tr>
+                <th scope="col">Claim No.</th>
+                <th scope="col">Product</th>
+                <th scope="col">Serial No.</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Assigned Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="jobs-body">
+
+              <tr>
+                <td colspan="7" class="technician-empty">
+                  No assigned jobs available.
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p
+          id="jobs-count"
+          class="technician-table-count"
+          aria-live="polite">
+          0 jobs
+        </p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk
+  </footer>
+
+</body>
+
+</html>

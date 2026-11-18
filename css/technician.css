@@ -1,0 +1,65 @@
+/* technician.css 
+   Pages: technician_dashboard, technician_jobs, technician_service_log,
+   profile, change_password, forgot_password. */
+:root {
+  --technician-green: #17633f;
+  --technician-amber: #825500;
+  --technician-red: #ad2525;
+  --technician-slate: #3f5068;
+  --technician-pale: #eaf0fa;
+}
+/* Shared-layout additions */
+.technician-page .technician-muted { color: var(--muted); }
+.technician-page .technician-intro { margin: 0 0 20px; }
+.technician-page .technician-stack { display: grid; gap: 20px; }
+.technician-page .technician-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.technician-page .technician-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.technician-page .technician-box-title { margin: 0 0 16px; }
+.technician-page .technician-stat-label { color: var(--muted); font-size: 14px; }
+.technician-page .technician-stat-value { color: var(--blue); font-weight: 700; font-size: 32px; margin-top: 8px; }
+.technician-page .technician-filter { display: grid; grid-template-columns: minmax(0, 2fr) minmax(150px, 1fr); gap: 16px; align-items: end; }
+.technician-page .technician-two-col { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.technician-page .technician-two-col > * { min-width: 0; }
+.technician-page .technician-info { display: grid; grid-template-columns: minmax(100px, 150px) minmax(0, 1fr); gap: 10px 12px; margin: 0; }
+.technician-page .technician-info dt { font-weight: 700; }
+.technician-page .technician-info dd { margin: 0; overflow-wrap: anywhere; }
+.technician-page .technician-empty { text-align: center; padding: 24px 12px; color: var(--muted); }
+.technician-page .technician-subtitle { margin: 6px 0 0; color: var(--muted); overflow-wrap: anywhere; }
+.technician-page .technician-required { color: var(--technician-red); }
+.technician-page .technician-note { padding: 12px; background: var(--technician-pale); border-left: 3px solid var(--blue-light); border-radius: 4px; }
+.technician-page .technician-message { min-height: 20px; margin-top: 12px; }
+.technician-page .technician-error { display: block; color: var(--technician-red); font-size: 13px; min-height: 16px; margin-top: 4px; }
+.technician-page .technician-success { color: var(--technician-green); font-weight: 700; }
+.technician-page .technician-warning { color: var(--technician-amber); font-weight: 700; }
+.technician-page .technician-invalid { border-color: var(--technician-red); }
+.technician-page .technician-hidden { display: none; }
+.technician-page .technician-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.technician-page .technician-timeline { list-style: none; padding: 0 0 0 18px; margin: 0; border-left: 2px solid var(--border); }
+.technician-page .technician-timeline-item { position: relative; padding: 0 0 20px 16px; overflow-wrap: anywhere; }
+.technician-page .technician-timeline-item::before { content: ''; position: absolute; top: 5px; left: -24px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue-light); }
+.technician-page .technician-timeline-date { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.technician-page .technician-status { display: inline-block; padding: 4px 10px; border-radius: 14px; font-size: 12px; font-weight: 700; color: #fff; white-space: nowrap; background: var(--technician-slate); }
+.technician-page .technician-status-pending { background: var(--technician-amber); }
+.technician-page .technician-status-in-service { background: var(--blue-light); }
+.technician-page .technician-status-repaired { background: var(--technician-green); }
+.technician-page .technician-status-replaced { background: var(--technician-green); }
+.technician-page .technician-status-rejected { background: var(--technician-red); }
+.technician-page .technician-status-delivered { background: var(--technician-slate); }
+.technician-page .technician-profile-picture { display: block; width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.technician-page .technician-profile-placeholder { display: flex; align-items: center; justify-content: center; width: 112px; height: 112px; border-radius: 50%; background: var(--technician-pale); border: 2px solid var(--border); color: var(--blue); font-size: 36px; font-weight: 700; }
+.technician-page .technician-auth-card { width: min(100%, 460px); margin: auto; }
+.technician-page .technician-table-count { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+.technician-page .technician-warranty { font-weight: 700; }
+.technician-page .technician-input-help { margin: 4px 0; font-size: 13px; color: var(--muted); }
+.technician-page .technician-table-link { white-space: nowrap; }
+.technician-page :is(input, select, textarea, button, a):focus-visible { outline: 3px solid var(--blue-light); outline-offset: 2px; }
+.technician-page textarea { min-height: 90px; resize: vertical; }
+.technician-page .technician-form-limit { max-width: 700px; }
+@media (max-width: 800px) {
+  .technician-page .technician-two-col, .technician-page .technician-filter { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 500px) {
+  .technician-page .technician-info { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .technician-page .technician-info dd { margin-bottom: 8px; }
+  .technician-page .technician-stat-value { font-size: 27px; }
+}

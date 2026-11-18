@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Technician Dashboard | WarrantyDesk</title>
+
+  <link rel="icon" href="../images/favicon.ico">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+
+  <link rel="stylesheet" href="../css/technician.css">
+
+  <script src="../js/technician.js" defer></script>
+</head>
+
+<body class="technician-page">
+
+  <header class="header">
+
+    <div class="brand">
+      WarrantyDesk
+    </div>
+
+    <div class="user">
+      Service Technician
+    </div>
+
+  </header>
+
+  <div class="wrapper">
+
+    <nav class="sidebar" aria-label="Technician navigation">
+
+      <div class="menu-title">
+        Technician
+      </div>
+
+      <a href="technician_dashboard.html"
+         class="active"
+         aria-current="page">
+        Dashboard
+      </a>
+
+      <a href="technician_jobs.html">
+        Assigned Jobs
+      </a>
+
+      <a href="technician_service_log.html">
+        Claim Details
+      </a>
+
+      <a href="profile.html">
+        Profile
+      </a>
+
+      <a href="change_password.html">
+        Change Password
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+    <main class="main">
+
+      <div class="page-title">
+
+        <h1>Technician Dashboard</h1>
+
+        <a href="technician_jobs.html" class="btn">
+          View Assigned Jobs
+        </a>
+
+      </div>
+
+      <p class="technician-intro technician-muted">
+        View your assigned service jobs, monitor repair progress,
+        and review recent service activity.
+      </p>
+
+      <section class="grid-4" aria-label="Job summary">
+
+        <div class="box">
+
+          <div class="technician-stat-label">
+            Assigned Jobs
+          </div>
+
+          <div
+            class="technician-stat-value"
+            id="count-all"
+            aria-live="polite">
+            0
+          </div>
+
+        </div>
+
+        <div class="box">
+
+          <div class="technician-stat-label">
+            In Service
+          </div>
+
+          <div
+            class="technician-stat-value"
+            id="count-service"
+            aria-live="polite">
+            0
+          </div>
+
+        </div>
+
+        <div class="box">
+
+          <div class="technician-stat-label">
+            Repaired
+          </div>
+
+          <div
+            class="technician-stat-value"
+            id="count-repaired"
+            aria-live="polite">
+            0
+          </div>
+
+        </div>
+
+        <div class="box">
+
+          <div class="technician-stat-label">
+            Pending Acceptance
+          </div>
+
+          <div
+            class="technician-stat-value"
+            id="count-pending"
+            aria-live="polite">
+            0
+          </div>
+
+        </div>
+
+      </section>
+
+      <div class="technician-stack">
+
+        <section class="box" aria-labelledby="assigned-jobs-title">
+
+          <h2
+            id="assigned-jobs-title"
+            class="technician-box-title">
+            My Assigned Jobs
+          </h2>
+
+          <div class="table-wrap">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th scope="col">Claim No.</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="dashboard-jobs">
+
+                <tr>
+                  <td colspan="5" class="technician-empty">
+                    No assigned jobs available.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="box" aria-labelledby="recent-updates-title">
+
+          <h2
+            id="recent-updates-title"
+            class="technician-box-title">
+            Recent Updates
+          </h2>
+
+          <ol
+            id="dashboard-updates"
+            class="technician-timeline"
+            aria-live="polite">
+
+            <li class="technician-timeline-item">
+              No service activity recorded yet.
+            </li>
+
+          </ol>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk
+  </footer>
+
+</body>
+
+</html>
