@@ -1,0 +1,84 @@
+/* Member 4: customer and public pages only. Shared CSS stays unchanged. */
+.customer-brand { color: #fff; text-decoration: none; }
+.customer-section-spaced { margin-top: 20px; }
+.customer-top-gap { margin-top: 22px; }
+.customer-intro { color: var(--muted); margin: -6px 0 20px; line-height: 1.5; }
+.customer-stats .box { min-height: 112px; }
+.customer-stat-value { color: var(--blue); font-size: 28px; font-weight: bold; margin: 7px 0 0; }
+.customer-stat-label { color: var(--muted); font-size: 13px; }
+.customer-hero { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: center; }
+.customer-hero h2 { margin-bottom: 6px; }
+.customer-section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 12px; }
+.customer-section-head h2 { margin: 0; }
+.customer-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.customer-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
+.customer-form-narrow { max-width: 750px; }
+.customer-form-narrow textarea { min-height: 125px; resize: vertical; }
+.customer-help { font-size: 13px; color: var(--muted); margin: 8px 0 0; line-height: 1.5; }
+.customer-alert { border: 1px solid var(--border); background: #f5f9ff; border-radius: 6px; padding: 12px 14px; margin: 14px 0; line-height: 1.5; }
+.customer-alert-error { border-color: #e0a29b; background: #fff5f3; color: #9c2f26; }
+.customer-alert-success { border-color: #a8d5b9; background: #f1fbf5; color: #216340; }
+.customer-filter { max-width: 380px; margin-bottom: 16px; }
+.customer-filter input { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 5px; font-size: 14px; }
+.customer-empty { color: var(--muted); padding: 18px 0; }
+.customer-link { font-weight: 600; text-decoration: none; }
+.customer-link:hover { text-decoration: underline; }
+.customer-public-wrap { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 48px 18px; }
+.customer-public-card { width: min(100%, 690px); }
+.customer-public-card h1 { margin-bottom: 8px; }
+.customer-result { margin-top: 22px; }
+.customer-result dl { display: grid; grid-template-columns: 165px 1fr; gap: 12px; margin-bottom: 0; }
+.customer-result dt { color: var(--muted); }
+.customer-result dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.customer-timeline { list-style: none; margin: 0; padding: 0 0 0 12px; border-left: 2px solid #c4d5ef; }
+.customer-timeline li { position: relative; padding: 1px 0 18px 18px; line-height: 1.5; }
+.customer-timeline li::before { content: ''; background: var(--blue-light); position: absolute; left: -18px; top: 7px; width: 10px; height: 10px; border-radius: 50%; }
+.customer-timeline small { color: var(--muted); display: block; }
+.customer-detail { margin-top: 22px; }
+.customer-detail p { line-height: 1.55; }
+.customer-top-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.customer-top-links a { color: #fff; text-decoration: none; font-size: 13px; }
+.customer-top-links a:hover { text-decoration: underline; }
+.customer-table-actions { white-space: nowrap; }
+.customer-banner { background: #e8effa; padding: 14px 16px; border-left: 3px solid var(--blue-light); border-radius: 5px; margin-bottom: 18px; font-size: 14px; line-height: 1.5; }
+.customer-demo { background: #fff8e8; color: #6f541e; border: 1px solid #f0deb0; border-radius: 5px; padding: 9px 12px; font-size: 12px; margin-bottom: 18px; }
+.customer-meta { color: var(--muted); font-size: 12px; }
+@media (max-width: 650px) {
+  .customer-form-grid { grid-template-columns: 1fr; }
+  .customer-result dl { grid-template-columns: 1fr; gap: 4px; }
+  .customer-result dd { margin-bottom: 11px; }
+  .customer-top-links { gap: 9px; }
+  .header { padding: 0 12px; }
+}
+
+/* Match Member 1 Dashboard Card Alignment */
+.customer-stats > .box + .box {
+    margin-top: 0;
+}
+
+/* Match Administrator Dashboard Card Sizes */
+.customer-stats .box {
+    min-height: 0;
+}
+
+/* Match Administrator Statistics Labels */
+.customer-stat-label {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* Match Administrator Statistics Numbers */
+.customer-stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text);
+    margin: 6px 0 2px;
+}
+
+
+/* Dashboard statistics descriptions */
+.customer-stat-note {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+}

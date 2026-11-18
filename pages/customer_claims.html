@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Claims | WarrantyDesk</title>
+
+    <!-- Shared CSS from group -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/status.css">
+
+    <!-- Member 4 CSS -->
+    <link rel="stylesheet" href="../css/customer.css">
+
+    <!-- Member 4 JavaScript -->
+    <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <a href="../index.html" class="brand customer-brand">
+            WarrantyDesk
+        </a>
+
+        <nav class="customer-top-links">
+            <a href="public_check.html">Check Warranty</a>
+            <a href="login.html">Logout</a>
+        </nav>
+
+    </header>
+
+    <!-- Sidebar and Main Content -->
+    <div class="wrapper">
+
+        <!-- Customer Sidebar -->
+        <aside class="sidebar" aria-label="Customer navigation">
+
+            <div class="menu-title">Customer</div>
+
+            <a href="customer_dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="customer_warranties.html">
+                My Warranties
+            </a>
+
+            <a href="customer_submit_claim.html">
+                Submit Claim
+            </a>
+
+            <a href="customer_claims.html" class="active">
+                My Claims
+            </a>
+
+            <div class="menu-title">Other</div>
+
+            <a href="public_check.html">
+                Public Warranty Check
+            </a>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <!-- Page Heading -->
+            <div class="page-title">
+
+                <h1>My Claims</h1>
+
+                <a href="customer_submit_claim.html" class="btn">
+                    + New Claim
+                </a>
+
+            </div>
+
+            <p class="customer-intro">
+                Track your service requests and see their progress.
+            </p>
+
+            <!-- Claim Submission Confirmation -->
+            <div
+                id="claimSubmitted"
+                hidden
+                aria-live="polite">
+            </div>
+
+            <!-- Claims Table -->
+            <section class="box">
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Product</th>
+                                <th>Submitted</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="claimsRows">
+                            <!-- Claims loaded by customer.js -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- Claim Details -->
+            <section
+                id="claimDetail"
+                class="box customer-detail"
+                hidden>
+
+                <div class="customer-section-head">
+
+                    <h2 id="claimDetailTitle">
+                        Claim details
+                    </h2>
+
+                    <span id="claimDetailStatus"></span>
+
+                </div>
+
+                <p>
+                    <strong>Product:</strong>
+                    <span id="claimDetailProduct"></span>
+                </p>
+
+                <p>
+                    <strong>Reported problem:</strong>
+                    <span id="claimDetailIssue"></span>
+                </p>
+
+                <h2>Service history</h2>
+
+                <ol
+                    id="claimHistory"
+                    class="customer-timeline">
+                </ol>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2026 WarrantyDesk &middot;
+        Warranty and Service Management System
+    </footer>
+
+</body>
+</html>

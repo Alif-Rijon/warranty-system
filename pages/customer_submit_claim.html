@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Claim | WarrantyDesk</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/customer.css">
+
+  <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../index.html" class="brand customer-brand">
+      WarrantyDesk
+    </a>
+
+    <nav class="customer-top-links" aria-label="Quick links">
+      <a href="public_check.html">Check Warranty</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Customer navigation">
+
+      <div class="menu-title">Customer</div>
+
+      <a href="customer_dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="customer_warranties.html">
+        My Warranties
+      </a>
+
+      <a href="customer_submit_claim.html" class="active">
+        Submit Claim
+      </a>
+
+      <a href="customer_claims.html">
+        My Claims
+      </a>
+
+      <div class="menu-title">Other</div>
+
+      <a href="public_check.html">
+        Public Warranty Check
+      </a>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <div class="page-title">
+
+        <h1>Submit a Warranty Claim</h1>
+
+        <a class="btn btn-gray" href="customer_warranties.html">
+          Back to warranties
+        </a>
+
+      </div>
+
+      <p class="customer-intro">
+        Choose a product covered by warranty and
+        describe the problem.
+      </p>
+
+      <section class="box customer-form-narrow">
+
+        <form id="claimForm">
+
+          <!-- Product Selection -->
+          <div class="form-row">
+
+            <label for="claimWarranty">
+              Select eligible product *
+            </label>
+
+            <select id="claimWarranty" required>
+              <option value="">
+                -- Select a product --
+              </option>
+            </select>
+
+            <p class="form-note">
+              Expired products are not eligible
+              to submit a new claim.
+            </p>
+
+          </div>
+
+          <!-- Problem Description -->
+          <div class="form-row">
+
+            <label for="claimProblem">
+              Describe the problem *
+            </label>
+
+            <textarea
+              id="claimProblem"
+              required
+              minlength="10"
+              placeholder="What is wrong with the product? When did it start?"
+            ></textarea>
+
+          </div>
+
+          <button type="submit" class="btn">
+            Submit Demo Claim
+          </button>
+
+        </form>
+
+        <div
+          id="claimMessage"
+          hidden
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+      <p class="customer-help">
+        Preview only: this form saves a sample claim
+        in this browser. The final PHP version must
+        verify ownership and eligibility before
+        storing a real claim.
+      </p>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot;
+    Warranty and Service Management System
+  </footer>
+
+</body>
+</html>
