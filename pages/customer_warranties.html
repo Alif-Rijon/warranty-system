@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Warranties | WarrantyDesk</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/customer.css">
+
+  <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../index.html" class="brand customer-brand">
+      WarrantyDesk
+    </a>
+
+    <nav class="customer-top-links" aria-label="Quick links">
+      <a href="public_check.html">Check Warranty</a>
+          <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Customer navigation">
+
+      <div class="menu-title">Customer</div>
+
+      <a href="customer_dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="customer_warranties.html" class="active">
+        My Warranties
+      </a>
+
+      <a href="customer_submit_claim.html">
+        Submit Claim
+      </a>
+
+      <a href="customer_claims.html">
+        My Claims
+      </a>
+
+      <div class="menu-title">Other</div>
+
+      <a href="public_check.html">
+        Public Warranty Check
+      </a>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <div class="page-title">
+        <h1>My Warranties</h1>
+
+        <a href="customer_submit_claim.html" class="btn">
+          + Submit Claim
+        </a>
+      </div>
+
+      <p class="customer-intro">
+        View your registered products and their warranty
+        coverage status.
+      </p>
+
+      <section class="box">
+
+        <!-- Search -->
+        <div class="customer-filter">
+          <label for="warrantySearch">
+            Search product or serial number
+          </label>
+
+          <input
+            id="warrantySearch"
+            type="search"
+            placeholder="Search warranties..."
+          >
+        </div>
+
+        <!-- Warranty Table -->
+        <div class="table-wrap">
+
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Serial number</th>
+                <th>Purchased</th>
+                <th>Expires</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="warrantyRows">
+              <!-- Loaded by customer.js -->
+            </tbody>
+          </table>
+
+        </div>
+
+        <p id="warrantyEmpty" class="customer-empty" hidden>
+          No matching warranties.
+        </p>
+
+      </section>
+
+      <p class="customer-help">
+        Coverage status: Active means more than 30 days
+        remain; Expiring Soon means 0–30 days;
+        Expired means past the expiry date.
+      </p>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot;
+    Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

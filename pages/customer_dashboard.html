@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Dashboard | WarrantyDesk</title>
+
+    <!-- Shared CSS from group -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/status.css">
+
+    <!-- Member 4 CSS -->
+    <link rel="stylesheet" href="../css/customer.css">
+
+    <!-- Member 4 JavaScript -->
+    <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <a href="../index.html" class="brand customer-brand">
+            WarrantyDesk
+        </a>
+
+        <nav class="customer-top-links">
+            <a href="public_check.html">Check Warranty</a>
+            <a href="login.html">Logout</a>
+      </nav>
+
+    </header>
+
+    <!-- Sidebar and Main Content -->
+    <div class="wrapper">
+
+        <!-- Customer Sidebar -->
+        <aside class="sidebar" aria-label="Customer navigation">
+
+            <div class="menu-title">Customer</div>
+
+            <a href="customer_dashboard.html" class="active">
+                Dashboard
+            </a>
+
+            <a href="customer_warranties.html">
+                My Warranties
+            </a>
+
+            <a href="customer_submit_claim.html">
+                Submit Claim
+            </a>
+
+            <a href="customer_claims.html">
+                My Claims
+            </a>
+
+            <div class="menu-title">Other</div>
+
+            <a href="public_check.html">
+                Public Warranty Check
+            </a>
+
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="main">
+
+            <!-- Page Heading -->
+            <div class="page-title">
+
+                <h1 id="customerGreeting">
+                    Customer Dashboard
+                </h1>
+
+                <a class="btn" href="customer_submit_claim.html">
+                    + Submit Claim
+                </a>
+
+            </div>
+
+            <p class="customer-intro">
+                Overview of your registered products,
+                warranty coverage, and service requests.
+            </p>
+
+            <!-- Dashboard Statistics -->
+            <div class="grid-4 customer-stats">
+
+                <!-- Total Warranties -->
+                <div class="box">
+
+                    <div class="customer-stat-label">
+                        My warranties
+                    </div>
+
+                    <div class="customer-stat-value" id="totalWarranties">
+                        0
+                    </div>
+
+                    <p class="customer-stat-note">
+                        Total registered products
+                    </p>
+
+                </div>
+
+                <!-- Active Warranties -->
+                <div class="box">
+
+                    <div class="customer-stat-label">
+                        Active warranties
+                    </div>
+
+                    <div class="customer-stat-value" id="activeWarranties">
+                        0
+                    </div>
+
+                    <p class="customer-stat-note">
+                        More than 30 days remaining
+                    </p>
+
+                </div>
+
+                <!-- Expiring Soon -->
+                <div class="box">
+
+                    <div class="customer-stat-label">
+                        Expiring soon
+                    </div>
+
+                    <div class="customer-stat-value" id="expiringWarranties">
+                        0
+                    </div>
+
+                    <p class="customer-stat-note">
+                        Expiring within 30 days
+                    </p>
+
+                </div>
+
+                <!-- Total Claims -->
+                <div class="box">
+
+                    <div class="customer-stat-label">
+                        My claims
+                    </div>
+
+                    <div class="customer-stat-value" id="totalClaims">
+                        0
+                    </div>
+
+                    <p class="customer-stat-note">
+                        Total submitted service requests
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Products and Warranty Table -->
+            <div class="box">
+
+                <div class="customer-section-head">
+
+                    <h2>My products and coverage</h2>
+
+                    <a class="customer-link"
+                       href="customer_warranties.html">
+                        View all warranties
+                    </a>
+
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Serial number</th>
+                                <th>Expires</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="dashboardWarranties">
+                            <!-- Data loaded by customer.js -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- Latest Service Claim -->
+            <div class="box customer-section-spaced">
+
+                <h2>Latest service claim</h2>
+
+                <p id="latestClaim">
+                    No claims yet.
+                </p>
+
+                <a href="customer_claims.html"
+                   class="btn btn-small">
+                    Track my claims
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2026 WarrantyDesk &middot;
+        Warranty and Service Management System
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Registration | WarrantyDesk</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/customer.css">
+
+  <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../index.html" class="brand customer-brand">
+      WarrantyDesk
+    </a>
+
+    <nav class="customer-top-links" aria-label="Quick links">
+      <a href="public_check.html">Check Warranty</a>
+      <a href="login.html?role=customer">Sign in</a>
+    </nav>
+  </header>
+
+  <!-- Registration Content -->
+  <main class="customer-public-wrap">
+
+    <section class="box customer-public-card">
+
+      <h1>Create a customer account</h1>
+
+      <p class="customer-intro">
+        Fill in your details to see how customer
+        registration will work in the final system.
+      </p>
+
+      <!-- Registration Form -->
+      <form id="registerForm">
+
+        <div class="customer-form-grid">
+
+          <!-- Full Name -->
+          <div class="form-row">
+            <label for="registerName">
+              Full name *
+            </label>
+
+            <input
+              id="registerName"
+              type="text"
+              required
+              placeholder="e.g. Rahim Ahmed"
+              maxlength="90"
+            >
+          </div>
+
+          <!-- Email -->
+          <div class="form-row">
+            <label for="registerEmail">
+              Email *
+            </label>
+
+            <input
+              id="registerEmail"
+              type="email"
+              required
+              placeholder="e.g. name@example.com"
+            >
+          </div>
+
+          <!-- Phone -->
+          <div class="form-row">
+            <label for="registerPhone">
+              Phone
+            </label>
+
+            <input
+              id="registerPhone"
+              type="tel"
+              placeholder="01XXXXXXXXX"
+            >
+          </div>
+
+          <!-- Address -->
+          <div class="form-row">
+            <label for="registerAddress">
+              Address
+            </label>
+
+            <input
+              id="registerAddress"
+              type="text"
+              placeholder="Your address"
+            >
+          </div>
+
+          <!-- Password -->
+          <div class="form-row">
+            <label for="registerPassword">
+              Password *
+            </label>
+
+            <input
+              id="registerPassword"
+              type="password"
+              minlength="8"
+              required
+              autocomplete="new-password"
+            >
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-row">
+            <label for="registerConfirm">
+              Confirm password *
+            </label>
+
+            <input
+              id="registerConfirm"
+              type="password"
+              minlength="8"
+              required
+              autocomplete="new-password"
+            >
+          </div>
+
+        </div>
+
+        <button class="btn" type="submit">
+          Create Demo Account
+        </button>
+
+      </form>
+
+      <!-- Registration Confirmation -->
+      <div
+        id="registerMessage"
+        hidden
+        aria-live="polite"
+      ></div>
+
+      <p id="registerNext" hidden>
+        <a
+          class="btn"
+          href="login.html?role=customer"
+        >
+          Go to Sign in
+        </a>
+      </p>
+
+      <p class="customer-help">
+        Preview only: no real account is created,
+        and passwords or contact details are not
+        saved. The final PHP version must validate
+        and store accounts securely.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot;
+    Warranty and Service Management System
+  </footer>
+
+</body>
+</html>

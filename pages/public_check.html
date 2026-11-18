@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Warranty Check | WarrantyDesk</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+  <link rel="stylesheet" href="../css/customer.css">
+
+  <script src="../js/customer.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="../index.html" class="brand customer-brand">
+      WarrantyDesk
+    </a>
+
+    <nav class="customer-top-links" aria-label="Quick links">
+      <a href="customer_register.html">Register</a>
+      <a href="login.html?role=customer">Sign in</a>
+    </nav>
+  </header>
+
+  <!-- Public Warranty Check -->
+  <main class="customer-public-wrap">
+
+    <section class="box customer-public-card">
+
+      <h1>Check your warranty</h1>
+
+      <p class="customer-intro">
+        Enter the product serial number to view
+        limited warranty coverage information.
+        No login required.
+      </p>
+
+      <!-- Warranty Search Form -->
+      <form id="publicCheckForm">
+
+        <div class="form-row">
+
+          <label for="serialLookup">
+            Product serial number *
+          </label>
+
+          <input
+            id="serialLookup"
+            name="serial"
+            type="text"
+            required
+            placeholder="e.g. SN-2026-004821"
+            autocomplete="off"
+          >
+
+        </div>
+
+        <button type="submit" class="btn">
+          Check Warranty
+        </button>
+
+      </form>
+
+      <!-- Sample Serial Numbers -->
+      <p class="customer-help">
+        Try these sample serial numbers:
+
+        <code>SN-2026-004821</code>,
+        <code>SN-2025-118302</code>,
+        or
+        <code>SN-2024-770115</code>.
+      </p>
+
+      <!-- Search Results -->
+      <div
+        id="publicResult"
+        class="customer-result"
+        hidden
+        aria-live="polite"
+      ></div>
+
+      <!-- Additional Links -->
+      <p class="customer-help customer-top-gap">
+
+        <a href="customer_register.html">
+          Create a customer account
+        </a>
+
+        |
+        <a href="login.html?role=customer">
+          Sign in to Customer Dashboard
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk &middot;
+    Warranty and Service Management System
+  </footer>
+
+</body>
+</html>
