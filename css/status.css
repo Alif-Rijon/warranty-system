@@ -1,0 +1,13 @@
+/* status.css - SHARED file (whole group): warranty status badges */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+}
+.badge-active   { background: #2e8b57; }
+.badge-expiring { background: #d99a00; }
+.badge-expired  { background: #c0392b; }

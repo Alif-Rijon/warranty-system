@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Claim Details and Service Log | WarrantyDesk</title>
+
+  <link rel="icon" href="../images/favicon.ico">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/status.css">
+
+  <link rel="stylesheet" href="../css/technician.css">
+
+  <script src="../js/technician.js" defer></script>
+</head>
+
+<body class="technician-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">WarrantyDesk</div>
+    <div class="user">Service Technician</div>
+  </header>
+
+  <div class="wrapper">
+
+    <!-- Technician Sidebar -->
+    <nav class="sidebar" aria-label="Technician navigation">
+
+      <div class="menu-title">Technician</div>
+
+      <a href="technician_dashboard.html">
+        Dashboard
+      </a>
+
+      <a href="technician_jobs.html">
+        Assigned Jobs
+      </a>
+
+      <a href="technician_service_log.html"
+         class="active"
+         aria-current="page">
+        Claim Details
+      </a>
+
+      <a href="profile.html">
+        Profile
+      </a>
+
+      <a href="change_password.html">
+        Change Password
+      </a>
+
+      <a href="login.html">
+        Logout
+      </a>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <!-- Claim Page Title -->
+      <div class="page-title">
+
+        <div>
+          <h1 id="claim-title">Claim Details</h1>
+
+          <p id="claim-subtitle" class="technician-subtitle">
+            Select an assigned job to view its details.
+          </p>
+        </div>
+
+        <!-- Dynamic Claim Status Badge -->
+        <span
+          id="claim-badge"
+          aria-live="polite">
+        </span>
+
+      </div>
+
+      <!-- Claim Content -->
+      <div class="technician-two-col">
+
+        <!-- Diagnosis and Service Log -->
+        <section class="box" aria-labelledby="service-log-heading">
+
+          <h2 id="service-log-heading">
+            Reported Problem
+          </h2>
+
+          <!-- Dynamic Reported Problem -->
+          <p id="claim-problem" class="technician-muted">
+            No claim selected.
+          </p>
+
+          <h2>Add Service Log</h2>
+
+          <p class="form-note">
+            Record your diagnosis, repair actions, and service
+            status for the selected claim.
+          </p>
+
+          <!-- Service Log Form -->
+          <form id="service-form" novalidate>
+
+            <!-- Diagnosis -->
+            <div class="form-row">
+
+              <label for="diagnosis">
+                Diagnosis
+                <span class="technician-required"
+                      aria-hidden="true">*</span>
+              </label>
+
+              <textarea
+                id="diagnosis"
+                name="diagnosis"
+                rows="4"
+                placeholder="Describe the identified issue"
+                aria-describedby="diagnosis-error"
+                required
+              ></textarea>
+
+              <span
+                id="diagnosis-error"
+                class="technician-error"
+                aria-live="polite">
+              </span>
+
+            </div>
+
+            <!-- Repair Action -->
+            <div class="form-row">
+
+              <label for="repair-action">
+                Repair Action / Parts Used
+                <span class="technician-required"
+                      aria-hidden="true">*</span>
+              </label>
+
+              <textarea
+                id="repair-action"
+                name="repairAction"
+                rows="4"
+                placeholder="Describe the repair performed or parts used"
+                aria-describedby="repair-action-error"
+                required
+              ></textarea>
+
+              <span
+                id="repair-action-error"
+                class="technician-error"
+                aria-live="polite">
+              </span>
+
+            </div>
+
+            <!-- Update Claim Status -->
+            <div class="form-row">
+
+              <label for="claim-status">
+                Update Status
+                <span class="technician-required"
+                      aria-hidden="true">*</span>
+              </label>
+
+              <select
+                id="claim-status"
+                name="status"
+                aria-describedby="claim-status-error"
+                required
+              >
+
+                <option value="">Select Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Service">In Service</option>
+                <option value="Repaired">Repaired</option>
+                <option value="Replaced">Replaced</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Delivered">Delivered</option>
+
+              </select>
+
+              <span
+                id="claim-status-error"
+                class="technician-error"
+                aria-live="polite">
+              </span>
+
+            </div>
+
+            <!-- Rejection Reason -->
+            <div
+              id="rejection-row"
+              class="form-row technician-hidden"
+              aria-hidden="true">
+
+              <label for="rejection-reason">
+                Rejection Reason
+                <span class="technician-required"
+                      aria-hidden="true">*</span>
+              </label>
+
+              <textarea
+                id="rejection-reason"
+                name="rejectionReason"
+                rows="3"
+                placeholder="Explain why this claim was rejected"
+                aria-describedby="rejection-reason-error"
+              ></textarea>
+
+              <span
+                id="rejection-reason-error"
+                class="technician-error"
+                aria-live="polite">
+              </span>
+
+            </div>
+
+            <!-- Form Actions -->
+            <div class="technician-actions">
+
+              <button
+                type="submit"
+                class="btn"
+                id="service-save"
+                disabled>
+                Save Service Log
+              </button>
+
+              <a href="technician_jobs.html" class="btn btn-gray">
+                Back to Jobs
+              </a>
+
+            </div>
+
+            <!-- Form Feedback -->
+            <p
+              id="service-success"
+              class="technician-message technician-success"
+              role="status"
+              aria-live="polite">
+            </p>
+
+          </form>
+
+        </section>
+
+        <!-- Service History and Claim Information -->
+        <div class="technician-stack">
+
+          <!-- Service History -->
+          <section class="box" aria-labelledby="history-heading">
+
+            <h2 id="history-heading">
+              Service History
+            </h2>
+
+            <!-- Dynamic Service History -->
+            <ol
+              id="service-history"
+              class="technician-timeline"
+              aria-live="polite">
+
+              <li class="technician-timeline-item">
+                No service logs recorded.
+              </li>
+
+            </ol>
+
+          </section>
+
+          <!-- Claim and Warranty Information -->
+          <section class="box" aria-labelledby="claim-info-heading">
+
+            <h2 id="claim-info-heading">
+              Claim and Warranty Details
+            </h2>
+
+            <!-- Dynamic Claim Information -->
+            <dl id="claim-info" class="technician-info">
+
+              <dt>Claim</dt>
+              <dd>No claim selected.</dd>
+
+              <dt>Warranty</dt>
+              <dd>Not available.</dd>
+
+            </dl>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 WarrantyDesk
+  </footer>
+
+</body>
+
+</html>
